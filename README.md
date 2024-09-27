@@ -21,7 +21,6 @@ pip install pyColorPrint
 ```
 
 ## Usage
-This project leverages the [termcolor](https://github.com/termcolor/termcolor) library for its core functionalities, allowing for easy color and style customization in the terminal. If you need more detailed functionalities, such as more advanced styling or color schemes, please check out the termcolor project.
 
 ### Basic Custom Print and Input
 `print_custom` and `input_custom`, allows for dynamic, styled text output by specifying foreground colors, background colors, bold, and underline attributes.
