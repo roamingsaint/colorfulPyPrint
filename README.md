@@ -15,9 +15,9 @@ It builds upon the popular [termcolor](https://github.com/termcolor/termcolor) l
 
 ## Installation
 
-You can install **pyColorPrint** via pip. This will also install **termcolor** as a dependency:
+You can install **colorfulPyPrint** via pip. This will also install **termcolor** as a dependency:
 ```bash
-pip install pyColorPrint
+pip install colorfulPyPrint
 ```
 
 ## Usage
@@ -136,4 +136,4 @@ Contributions are welcome! Please open an issue or submit a pull request with an
 Special thanks to the creators of the [**termcolor**](https://github.com/termcolor/termcolor) project for providing the foundation upon which this utility is built. Please check the project for more advanced styling and color schemes.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/roamingsaint/pyColorPrint/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/roamingsaint/colorfulPyPrint/blob/main/LICENSE) file for details.
