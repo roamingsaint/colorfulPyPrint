@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyColorPrint',
+    name='colorfulPyPrint',
     version='0.1.0',
     packages=find_packages(),
     install_requires=[
@@ -10,7 +10,7 @@ setup(
     description='Utility for colored  print and input statements',
     long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/roamingsaint/pyColorPrint.git',
+    url='https://github.com/roamingsaint/colorfulPyPrint.git',
     author='Kanad Rishiraj',
     classifiers=[
         'Programming Language :: Python :: 3',
