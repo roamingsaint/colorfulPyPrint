@@ -1,4 +1,6 @@
 import re
+import sys
+import traceback
 from typing import Literal, Optional
 from termcolor import colored
 
@@ -94,9 +96,27 @@ def print_error(msg: str, end: str = '\n', bold: Optional[bool] = None, underlin
 
 
 def print_exception(exception_obj: Exception, end: str = '\n', bold: Optional[bool] = None,
-                    underline: Optional[bool] = None) -> None:
-    """Prints an exception message in red."""
-    print_custom(f'\u274C  {get_full_class_name(exception_obj)}: {exception_obj}',
+                    underline: Optional[bool] = None, with_traceback: Optional[bool] = True) -> None:
+    """
+    Print the full traceback for `exception_obj`, with all preceding lines normal and
+    only the final exception line in red (on grey), prefixed with ❌.
+    """
+    if not with_traceback:
+        last_line = f"{get_full_class_name(exception_obj)}: {exception_obj}"
+    else:
+        # Build the full, nicely formatted traceback (honors chaining, ExceptionGroup, etc.)
+        tb_exc = traceback.TracebackException.from_exception(exception_obj)
+        tb_text = "".join(tb_exc.format()).rstrip()
+        lines = tb_text.splitlines()
+
+        # Print everything except the last line without color
+        if len(lines) > 1:
+            sys.stderr.write("\n".join(lines[:-1]) + "\n")
+
+        # Color just the last line
+        last_line = lines[-1] if lines else f"{type(exception_obj).__name__}: {exception_obj}"
+
+    print_custom(f"\u274C  {last_line}",
                  text_color='red', on_color='on_grey', end=end, bold=bold, underline=underline)
 
 

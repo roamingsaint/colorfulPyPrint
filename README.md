@@ -69,15 +69,17 @@ Output:
 
 
 #### Exceptions
-The `print_exception` function accepts the exception object and prints an error message with the ExceptionClass and Exception message, and not print the traceback to keep the output clean.
+The `print_exception` function accepts the exception object and prints an error message with the ExceptionClass and Exception message.
+
+You can set `with_traceback=False` to not print the traceback to keep the output clean.
 ```python
 # Example: print_exception()
 try:
     x = 1/0
 except Exception as e:
-    print_exception(e)
+    print_exception(e, with_traceback=False)
 ```
-Output: 
+Output:
 
 > ${\color{red}❌ ZeroDivisionError: division by zero}$
 
